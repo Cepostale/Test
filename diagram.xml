@@ -1,0 +1,142 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="Page-1" id="2cc2d294-239e-d60f-22bb-7591106a988e">
+    <mxGraphModel dx="1426" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Package Personnes -->
+        <mxCell id="package_personnes" value="Package Personnes" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;horizontalStack=0;resizeParent=1;resizeParentMax=0;shadow=0;dashed=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="classe_personne" value="Personne&#xa;+ id: int&#xa;+ nom: String&#xa;+ prénom: String&#xa;+ statut: String&#xa;+ getStatut(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="package_personnes">
+          <mxGeometry y="26" width="200" height="124" as="geometry"/>
+        </mxCell>
+
+        <!-- Package Badges -->
+        <mxCell id="package_badges" value="Package Badges" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;horizontalStack=0;resizeParent=1;resizeParentMax=0;shadow=0;dashed=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="40" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="classe_badge" value="Badge&#xa;+ idBadge: int&#xa;+ actif: boolean&#xa;+ estActif(): boolean&#xa;+ verifierValidite(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="package_badges">
+          <mxGeometry y="26" width="200" height="124" as="geometry"/>
+        </mxCell>
+
+        <!-- Package Lecteurs -->
+        <mxCell id="package_lecteurs" value="Package Lecteurs" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;horizontalStack=0;resizeParent=1;resizeParentMax=0;shadow=0;dashed=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="250" height="400" as="geometry"/>
+        </mxCell>
+        
+        <!-- Classe abstraite LecteurBadge -->
+        <mxCell id="classe_lecteurbadge" value="&lt;b&gt;&lt;i&gt;LecteurBadge&lt;/i&gt;&lt;/b&gt;&#xa;+ idLecteur: int&#xa;+ localisation: String&#xa;+ typePorte: String&#xa;+ ouvrirPorte(): void&#xa;+ getTypePorte(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="package_lecteurs">
+          <mxGeometry y="26" width="250" height="124" as="geometry"/>
+        </mxCell>
+
+        <!-- Classes filles -->
+        <mxCell id="classe_lecteurbatiment" value="LecteurBatiment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="package_lecteurs">
+          <mxGeometry y="150" width="250" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="classe_lecteursalle" value="LecteurSalle" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="package_lecteurs">
+          <mxGeometry y="180" width="250" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="classe_lecteurlaboratoire" value="LecteurLaboratoire" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="package_lecteurs">
+          <mxGeometry y="210" width="250" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Package Serveur -->
+        <mxCell id="package_serveur" value="Package Serveur" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;horizontalStack=0;resizeParent=1;resizeParentMax=0;shadow=0;dashed=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="classe_serveur" value="Serveur&#xa;+ droitsParStatut: Map&#xa;+ droitsRequisParType: Map&#xa;+ chargerConfiguration(): void&#xa;+ demanderAccès(): boolean&#xa;+ verifierDroits(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="package_serveur">
+          <mxGeometry y="26" width="200" height="124" as="geometry"/>
+        </mxCell>
+
+        <!-- Package Orchestration -->
+        <mxCell id="package_orchestration" value="Package Orchestration" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;horizontalStack=0;resizeParent=1;resizeParentMax=0;shadow=0;dashed=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="220" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="classe_scheduler" value="Scheduler&#xa;+ heureDébut: int&#xa;+ heureFin: int&#xa;+ simulerJournée(): void&#xa;+ ajouterÉvénement(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="package_orchestration">
+          <mxGeometry y="26" width="200" height="124" as="geometry"/>
+        </mxCell>
+
+        <!-- Associations -->
+
+        <!-- Badge -> Personne (1:1) -->
+        <mxCell id="association_badge_personne" value="1" style="endArrow=open;dashed=0;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="classe_badge" target="classe_personne">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="380" y="190" as="sourcePoint"/>
+            <mxPoint x="480" y="90" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label_association_badge_personne" value="personneAssociee" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="association_badge_personne">
+          <mxGeometry x="-0.1571" y="1" relative="1" as="geometry">
+            <mxPoint x="-10" y="9" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Serveur -> LecteurBadge (1..*) -->
+        <mxCell id="association_serveur_lecteur" value="1..*" style="endArrow=open;dashed=0;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="classe_serveur" target="classe_lecteurbadge">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="240" y="290" as="sourcePoint"/>
+            <mxPoint x="520" y="100" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label_association_serveur_lecteur" value="lecteurs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="association_serveur_lecteur">
+          <mxGeometry x="0.3333" y="-1" relative="1" as="geometry">
+            <mxPoint x="-9" y="-9" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Serveur -> Badge (1..*) -->
+        <mxCell id="association_serveur_badge" value="1..*" style="endArrow=open;dashed=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="classe_serveur" target="classe_badge">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="140" y="220" as="sourcePoint"/>
+            <mxPoint x="380" y="190" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label_association_serveur_badge" value="badges" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="association_serveur_badge">
+          <mxGeometry x="0.5" y="0" relative="1" as="geometry">
+            <mxPoint x="-7" y="19" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Scheduler -> Serveur (dependency) -->
+        <mxCell id="dependency_scheduler_serveur" value="" style="endArrow=open;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="classe_scheduler" target="classe_serveur">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="280" y="290" as="sourcePoint"/>
+            <mxPoint x="240" y="290" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label_dependency_scheduler_serveur" value="utilise" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="dependency_scheduler_serveur">
+          <mxGeometry x="0.5" y="0" relative="1" as="geometry">
+            <mxPoint x="-7" y="-9" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Héritage Lecteurs -->
+        <mxCell id="heritage_lecteurbatiment" value="" style="endArrow=block;dashed=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="classe_lecteurbatiment" target="classe_lecteurbadge">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="645" y="150" as="sourcePoint"/>
+            <mxPoint x="645" y="150" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="heritage_lecteursalle" value="" style="endArrow=block;dashed=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="classe_lecteursalle" target="classe_lecteurbadge">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="645" y="180" as="sourcePoint"/>
+            <mxPoint x="645" y="150" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="heritage_lecteurlaboratoire" value="" style="endArrow=block;dashed=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="classe_lecteurlaboratoire" target="classe_lecteurbadge">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="645" y="210" as="sourcePoint"/>
+            <mxPoint x="645" y="150" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
